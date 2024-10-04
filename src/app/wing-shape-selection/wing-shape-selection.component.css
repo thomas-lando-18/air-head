@@ -1,0 +1,11 @@
+.wing-selection-window {
+    position: absolute;
+    top: 15%;
+    left: 2%;
+    background-color: rgb(23, 50, 69);
+    height: 78%;
+    width: 20%;
+    border: 10;
+    border-style: solid;
+    border-color: rgb(38, 59, 77);
+}
