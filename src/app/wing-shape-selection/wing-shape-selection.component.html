@@ -1,3 +1,31 @@
-<div class="wing-selection-window">
-    <button type="button" (click)="onSubmit()">Submit</button>
-</div>
+<div class="container">
+  <h1 class="form-title">Wing Shape Selection</h1>
+    <form [formGroup]="wingForm" (ngSubmit)="onSubmit()">
+      <div class="camber-selection">
+        <label for="number1" class="wing-label">Max Camber (tenths of %):</label>
+        <input class="input-box" type="number" id="number1" formControlName="number1" />
+        <div *ngIf="wingForm.controls['number1'].invalid && wingForm.controls['number1'].touched">
+          <small>Number 1 is required and should be a valid number</small>
+        </div>
+      </div>
+  
+      <div class="camber-selection">
+        <label class="wing-label" for="number2">Position of Max Camber: </label>
+        <input class="input-box" type="number" id="number2" formControlName="number2" />
+        <div *ngIf="wingForm.controls['number2'].invalid && wingForm.controls['number2'].touched">
+          <small>Number 2 is required and should be a valid number</small>
+        </div>
+      </div>
+  
+      <div>
+        <label class="wing-label" for="number3">Max Thick (% of Chord):</label>
+        <input class="input-box" type="number" id="number3" formControlName="number3" />
+        <div *ngIf="wingForm.controls['number3'].invalid && wingForm.controls['number3'].touched">
+          <small>Number 3 is required and should be a valid number</small>
+        </div>
+      </div>
+  
+      <button class="redraw-wing" type="submit" [disabled]="wingForm.invalid">Submit</button>
+    </form>
+  </div>
+  
